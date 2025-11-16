@@ -16,6 +16,11 @@ Includes a desktop navigation, mobile hamburger menu, and smooth slide-in mobile
 
 ---
 
+## Live Demo
+
+Check the responsive header live here:  
+[Responsive Header Live](https://dev-irfanjanjua.github.io/Responisive-Header/)
+
 ## Folder Structure
 
 ```
