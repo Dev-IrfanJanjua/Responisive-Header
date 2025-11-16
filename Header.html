@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="Header.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-container">
+
+          <div class="header-logo">
+            <a href="#">
+              <img src="swissker-logo-white.png" alt="" />
+            </a>
+          </div>
+
+          <nav class="header-nav">
+            <ul class="header-nav__list">
+              <li class="header-nav__item"><a href="#" class="header-nav__link">Home</a></li>
+              <li class="header-nav__item"><a href="#" class="header-nav__link">About us</a></li>
+              <li class="header-nav__item"><a href="#" class="header-nav__link">Contect us</a></li>
+              <li class="header-nav__item"><a href="#" class="header-nav__link">Support</a></li>
+            </ul>
+          </nav>
+          
+          <nav class="mobile-nav">
+            <ul class="mobile-nav__list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-actions">
+            <a href="#" class="header-action__link">Contact us</a>
+            <a href="#" class="header-action__link">About us</a>
+          </div>
+
+          <div class="hamburgur">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+
+    <script>
+        const hamburger = document.querySelector(".hamburgur");
+        const mobileNav = document.querySelector(".mobile-nav");
+        const mobileLinks = document.querySelectorAll(".mobile-nav a");
+
+        hamburger.addEventListener("click", () => {
+            const isOpen = mobileNav.classList.toggle("open");
+            hamburger.classList.toggle("active");
+
+            // Lock or unlock body scroll
+            document.body.style.overflow = isOpen ? "hidden" : "auto";
+
+            // Accessibility update
+            hamburger.setAttribute("aria-expanded", isOpen);
+        });
+
+        // Close menu when any mobile nav link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                mobileNav.classList.remove("open");
+                hamburger.classList.remove("active");
+                document.body.style.overflow = "auto";
+                hamburger.setAttribute("aria-expanded", "false");
+            });
+        });
+    </script>
+
+
+  </body>
+</html>
