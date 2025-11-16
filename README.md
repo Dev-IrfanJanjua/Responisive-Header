@@ -20,9 +20,9 @@ Includes a desktop navigation, mobile hamburger menu, and smooth slide-in mobile
 
 ```
 responsive-header/
-├── Header.html
 ├── Header.css
 ├── README.md
+├── index.html
 ├── swissker-logo-white.png
 
 ```
